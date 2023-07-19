@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import AuthContext from "../Context/AuthContext";
 import { Button, Card, Typography } from "@material-tailwind/react";
 import { useNavigate } from "react-router-dom";
+import TableColumnTypography from "../Component/TableColumn";
 
 const ManageUser = () => {
   let [data, setData] = useState(null);
@@ -61,7 +62,7 @@ const ManageUser = () => {
           setError(e.message);
         } else {
           navigate("/");
-          alert("請重新進入本頁面")
+          alert("請重新進入本頁面");
         }
       });
   }, []);
@@ -166,175 +167,67 @@ const ManageUser = () => {
                   ) => (
                     <tr key={id} className="even:bg-blue-gray-50/50">
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {index + 1}
-                        </Typography>
+                        <TableColumnTypography content={index + 1} />
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {name}
-                        </Typography>
+                        <TableColumnTypography content={name} />
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {genders}
-                        </Typography>
+                        <TableColumnTypography content={genders} />
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {birthday}
-                        </Typography>
+                        <TableColumnTypography content={birthday} />
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {certificate_number}
-                        </Typography>
+                        <TableColumnTypography content={certificate_number} />
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {certificate_expiry_date}
-                        </Typography>
+                        <TableColumnTypography
+                          content={certificate_expiry_date}
+                        />
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {disability_level}
-                        </Typography>
+                        <TableColumnTypography content={disability_level} />
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {disability_category}
-                        </Typography>
+                        <TableColumnTypography content={disability_category} />
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {address}
-                        </Typography>
+                        <TableColumnTypography content={address} />
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {phone}
-                        </Typography>
+                        <TableColumnTypography content={phone} />
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {email}
-                        </Typography>
+                        <TableColumnTypography content={email} />
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {contact_person_phone}
-                        </Typography>
+                        <TableColumnTypography content={contact_person_phone} />
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {contact_relationship}
-                        </Typography>
+                        <TableColumnTypography content={contact_relationship} />
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {username}
-                        </Typography>
+                        <TableColumnTypography content={username} />
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {password}
-                        </Typography>
+                        <TableColumnTypography content={password} />
                       </td>
+
                       {/* <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {auxiliary_tool}
-                        </Typography>
+                        <TableColumnTypography content={auxiliary_tool}/>
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {tool_id}
-                        </Typography>
+                        <TableColumnTypography content={tool_id}/>
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {tool_name}
-                        </Typography>
+                        <TableColumnTypography content={tool_name}/>
                       </td>
                       <td className="p-4">
-                        <Typography
-                          variant="small"
-                          color="blue-gray"
-                          className="font-normal"
-                        >
-                          {min_size}
-                        </Typography>
+                        <TableColumnTypography content={min_size}/>
+                      </td>
+                      <td className="p-4">
+                        <TableColumnTypography content={password}/>
                       </td> */}
                     </tr>
                   ),
@@ -342,11 +235,15 @@ const ManageUser = () => {
               </tbody>
             )}
           </table>
+
+          {/* loding */}
           {isPending && (
             <div className={"flex items-center justify-center h-screen"}>
               Loading...
             </div>
           )}
+
+          {/* error message */}
           {error && (
             <div className={"flex items-center justify-center h-screen"}>
               {error}

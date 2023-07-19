@@ -16,23 +16,23 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // This will render comppnent twice to detect any problem of code
   // <React.StrictMode>
-    <ThemeProvider>
-      <AuthProvider>
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path={"/"} exact element={<ManagerLogin />} />
-            <Route
-              path={"/manage_user"}
-              element={<PrivateRoute element={<ManageUser />} />}
-            />
-            <Route
-              path={"/manage_driver"}
-              element={<PrivateRoute element={<ManageDriver />} />}
-            />
-          </Routes>
-        </BrowserRouter>
-      </AuthProvider>
-    </ThemeProvider>
+  <ThemeProvider>
+    <AuthProvider>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path={"/"} exact element={<ManagerLogin />} />
+          <Route
+            path={"/manage_user"}
+            element={<PrivateRoute element={<ManageUser />} />}
+          />
+          <Route
+            path={"/manage_driver"}
+            element={<PrivateRoute element={<ManageDriver />} />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
+  </ThemeProvider>,
   // </React.StrictMode>,
 );
