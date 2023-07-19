@@ -27,10 +27,10 @@ const ManageUser = () => {
     "聯絡人關係",
     "帳號",
     "密碼",
-    "輔具",
-    "輔具ID",
-    "輔具名稱",
-    "最小尺寸",
+    // "輔具",
+    // "輔具ID",
+    // "輔具名稱",
+    // "最小尺寸",
   ];
 
   useEffect(() => {
@@ -157,10 +157,10 @@ const ManageUser = () => {
                       contact_relationship,
                       username,
                       password,
-                      auxiliary_tool,
-                      tool_id,
-                      tool_name,
-                      min_size,
+                      // auxiliary_tool,
+                      // tool_id,
+                      // tool_name,
+                      // min_size,
                     },
                     index,
                   ) => (
@@ -300,7 +300,7 @@ const ManageUser = () => {
                           {password}
                         </Typography>
                       </td>
-                      <td className="p-4">
+                      {/* <td className="p-4">
                         <Typography
                           variant="small"
                           color="blue-gray"
@@ -335,7 +335,7 @@ const ManageUser = () => {
                         >
                           {min_size}
                         </Typography>
-                      </td>
+                      </td> */}
                     </tr>
                   ),
                 )}
