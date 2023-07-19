@@ -18,7 +18,7 @@ class TokenProccess():
         return jwt.encode({
             'user_id': user.id,
             'rule': 'manager',
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=10),
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=1),
             'iat': datetime.datetime.utcnow()
         }, 'access_secret', algorithm='HS256')
 
