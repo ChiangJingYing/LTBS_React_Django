@@ -14,7 +14,8 @@ import ManageUser from "./Page/ManageUser";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  // This will render comppnent twice to detect any problem of code
+  // <React.StrictMode>
     <ThemeProvider>
       <AuthProvider>
         <BrowserRouter>
@@ -33,5 +34,5 @@ root.render(
         </BrowserRouter>
       </AuthProvider>
     </ThemeProvider>
-  </React.StrictMode>,
+  // </React.StrictMode>,
 );
